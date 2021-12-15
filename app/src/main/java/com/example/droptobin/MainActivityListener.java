@@ -88,8 +88,10 @@ public class MainActivityListener implements View.OnDragListener, View.OnTouchLi
         if (item.getItemId() == R.id.omAdd) {
             mainActivity.ivShape.setX(100);
             mainActivity.ivShape.setY(100);
-            constraintLayout.addView(mainActivity.ivShape);
-            mainActivity.ivShape.setVisibility(View.VISIBLE);
+            if(mainActivity.ivShape.getVisibility() != View.VISIBLE) {
+                constraintLayout.addView(mainActivity.ivShape);
+                mainActivity.ivShape.setVisibility(View.VISIBLE);
+            }
         }
         return true;
     }
